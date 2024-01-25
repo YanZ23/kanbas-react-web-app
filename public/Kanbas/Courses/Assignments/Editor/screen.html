@@ -1,24 +1,34 @@
 <html>
   <head></head>
   <body>
-    <table>
+    <table width="100%">
       <tbody>
         <tr>
           <td valign="top">
             <ul>
+              <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
               <li>
-                <a href="/Kanbas/Account/Navigation/index.html"> Account</a>
-              </li>
-              <li>
-                <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
+                <a href="#">Dashboard</a>
               </li>
               <li>
                 <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
               </li>
               <li>
-                <a href="/Kanbas/Calendar/index.html">Calendar</a>
+                <a href="#">Calendar</a>
               </li>
-              <li><a href="/Kanbas/Inbox/index.html">Inbox</a></li>
+              <li><a href="#">Inbox</a></li>
+              <li>
+                <a href="#">History</a>
+              </li>
+              <li>
+                <a href="#">Studio</a>
+              </li>
+              <li>
+                <a href="#">Commons</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
             </ul>
           </td>
           <td valign="top">
@@ -27,29 +37,42 @@
                 <a href="/Kanbas/Courses/Home/screen.html"> Home</a>
               </li>
               <li>
-                <a href="/Kanbas/Courses/Modules/screen.html"> Modules</a>
+                <a href="#"> Modules</a>
               </li>
-              <li><a href="/Kanbas/Courses/Piazza/index.html"> Piazza</a></li>
-              <li><a href="/Kanbas/Courses/Grades/screen.html"> Grades</a></li>
+              <li><a href="#"> Piazza</a></li>
+              <li><a href="#"> Zoom Meetings</a></li>
               <li>
                 <a href="/Kanbas/Courses/Assignments/screen.html">
                   Assignments</a
                 >
               </li>
+              <li><a href="#"> Quizzes</a></li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html"> Grades</a></li>
+              <li><a href="#"> People</a></li>
+              <li><a href="#"> Panopto Video</a></li>
+              <li><a href="#"> Discussions</a></li>
+              <li><a href="#"> Announcements</a></li>
+              <li><a href="#"> Pages</a></li>
+              <li><a href="#"> Files</a></li>
+              <li><a href="#"> Rubrics</a></li>
+              <li><a href="#"> Outcomes</a></li>
+              <li><a href="#"> Collaborations</a></li>
+              <li><a href="#"> Syllabus</a></li>
+              <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html"> Settings</a></li>
             </ul>
           </td>
-          <td>
+          <td valign="top">
             <form action="/Kanbas/Courses/Assignments/screen.html">
               <select>
                 <option>Speed Grader</option>
               </select>
               <hr />
               <h2>Assignment Name</h2>
-              <input value="A1 - HTML" />
+              <input value="A1 - ENV + HTML" />
               <br />
               <br />
               <textarea>
-      Assignment Description. In this assignment we are learning about HTML. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia veritatis iure, nam repellat pariatur consequatur, blanditiis fuga molestiae, magnam vitae natus ratione fugiat provident rerum doloribus odio dolore expedita?</textarea
+                Assignment Description. In this assignment we are learning about HTML. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia veritatis iure, nam repellat pariatur consequatur, blanditiis fuga molestiae, magnam vitae natus ratione fugiat provident rerum doloribus odio dolore expedita?</textarea
               >
               <br />
               <br />
@@ -66,6 +89,18 @@
               </select>
               <br />
               <br />
+              <label>Display Grade as</label><br />
+              <select>
+                <option>Percentage</option>
+              </select>
+              <br />
+              <br />
+              <label>Submission Type</label><br />
+              <select>
+                <option>Online</option>
+              </select>
+              <br />
+              <br />
               <label>Online Entry Options</label><br />
               <label
                 ><input type="checkbox" name="online-entry-options" />Text
@@ -77,16 +112,28 @@
               Recordings<br />
               <input type="checkbox" name="online-entry-options" />Student
               Annotations<br />
+              <input type="checkbox" name="online-entry-options" />File
+              Uploads<br />
+              <br />
+              <br />
+              <label>Assign</label><br />
+              <label for="assign">Assign to</label><br />
+              <input id="assign" value="Everyone" />
               <br />
               <br />
               <label>Due Date</label><br />
-              <input type="date" value="2020-09-01" /><br />
+              <input type="date" value="2020-09-01" />
               <br />
               <br />
               <label>Available from</label><br />
-              <input type="date" value="2020-09-01" /><br /><br /><br />
-              <button>Cancel</button>
-              <button>Save</button>
+              <input type="date" value="2020-09-01" />
+              <br />
+              <br />
+              <label>Until</label><br />
+              <input type="date" value="2020-09-01" /><br /><br />
+              <a href="/Kanbas/Courses/Assignments/screen.html">
+              <button>Cancel</button></a>
+              <button type="submit">Save</button>
             </form>
           </td>
         </tr>
