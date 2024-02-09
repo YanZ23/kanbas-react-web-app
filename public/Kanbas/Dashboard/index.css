@@ -1,0 +1,15 @@
+.custom-gutter > .col {
+    padding: 0 15px;
+  }
+  .custom-margin > .col {
+    margin-bottom: 35px;
+  }
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  .card {
+    max-width: 270px;
+    min-width: 250px;
+    margin: auto;
+  }

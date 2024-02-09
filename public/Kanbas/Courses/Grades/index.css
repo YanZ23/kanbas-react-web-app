@@ -1,0 +1,15 @@
+.table thead th {
+    width: 1%; /* Prevents the header from stretching */
+    white-space: nowrap;
+  }
+  .table tbody td {
+    width: 1%; /* Ensures consistent cell width */
+    text-align: center; /* Center text in cells */
+    white-space: nowrap;
+  }
+  .table tbody td input {
+    width: 100%; /* Makes input take the full cell width */
+    text-align: center; /* Centers text inside input fields */
+    margin: auto; /* Centers input within the cell */
+    display: block;
+  }

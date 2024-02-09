@@ -1,64 +1,78 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/Status/index.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" />
+    
+  </head>
   <body>
-    <h3>Course Status</h3>
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <button>Unpublish</button>
-          </td>
-          <td>
-            <button>Published</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html"> Import Existing Content</a>
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html"> Import From Commons</a>
-      </li>
-      <li><a href="/Kanbas/Courses/Home/screen.html"> Choose Home Page</a></li>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html"> View Course Stream</a>
-      </li>
-      <li><a href="/Kanbas/Courses/Home/screen.html"> New Announcement</a></li>
-      <li><a href="/Kanbas/Courses/Home/screen.html"> New Analytics</a></li>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html">
-          View Course Notifications</a
-        >
-      </li>
-    </ul>
-    <h3>Comming Up</h3>
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <a href="/Kanbas/Courses/Home/screen.html"> View Calendar</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html">
-          Lecture CS4550.12631.202410 Sep 7 at 11:45am</a
-        >
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html">
-          Lecture CS4550.12631.202410 Sep 11 at 11:45am</a
-        >
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Home/screen.html">
-          CS5610 06 SP23 Lecture Sep 11 at 6pm</a
-        >
-      </li>
-    </ul>
+    <div class="sidebar">
+      <h3>Course Status</h3>
+      <div class="list-group">
+        <div class="list-group-item">
+          <button><i class="fa-solid fa-ban"></i>Unpublish</button>
+          <button><i class="fa-regular fa-circle-check"></i> Published</button>
+        </div>
+      </div>
+
+      <div class="list-group">
+        <button class="list-group-item">
+          <i class="fa-solid fa-file-import"></i>
+          <a href="#"> Import Existing Content</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <a href="#"> Import From Commons</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-solid fa-arrows-to-dot"></i>
+          <a href="#"> Choose Home Page</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-solid fa-chart-column"></i>
+          <a href="#"> View Course Stream</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-solid fa-bullhorn"></i>
+          <a href="#"> New Announcement</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-solid fa-chart-column"></i>
+          <a href="#"> New Analytics</a>
+        </button>
+        <button class="list-group-item">
+          <i class="fa-regular fa-bell"></i>
+          <a href="#"> View Course Notifications</a>
+        </button>
+      </div>
+      <br/>
+      <div class="upcoming-container">
+        <h3>Comming Up</h3>
+        <a href="#" class="list-group-item view-calendar">
+          <i class="fa-solid fa-calendar"></i>
+          View Calendar
+        </a>
+      </div>
+
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <i class="fa-solid fa-calendar"></i>
+          Lecture 
+          <br/>CS4550.12631.202410 Sep 7 at 11:45am
+        </a>
+        <a href="#" class="list-group-item">
+          <i class="fa-solid fa-calendar"></i>
+          Lecture <br/>CS4550.12631.202410 Sep 11 at 11:45am
+        </a>
+        <a href="#" class="list-group-item">
+          <i class="fa-solid fa-calendar"></i>
+          Lecture <br/>CS5610 06 SP23 Lecture Sep 11 at 6pm
+        </a>
+      </div>
+    </div>
   </body>
 </html>
