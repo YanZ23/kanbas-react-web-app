@@ -1,0 +1,37 @@
+.custom-gutter > .col {
+    padding: 0 15px;
+  }
+  .custom-margin > .col {
+    margin-bottom: 35px;
+  }
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  .card {
+    max-width: 270px;
+    min-width: 250px;
+    margin: auto;
+  }
+  .pen-icon {
+    color: #0056b3; 
+    font-size: 24px;
+  }
+  .course-name {
+    margin-bottom: 5px;
+  }
+  .course-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    width: 100%; 
+    font-size: 0.8em;
+    color: "gray";
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  

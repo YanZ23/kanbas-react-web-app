@@ -1,0 +1,72 @@
+.index1-specific .list-group-item {
+    display: flex; 
+    align-items: center; 
+    text-align: left; 
+    border: none !important; 
+  background-color: transparent !important; 
+  padding-left: 0 !important; 
+  }
+  
+ .index1-specific.list-group-item a {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .index1-specific .list-group-item svg {
+    margin-right: 10px; 
+  }
+  .index1-specific .styled-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 0.75rem 1rem; /* Padding for spacing */
+    margin-bottom: 0.5rem; /* Margin between buttons */
+    color: #495057; /* Text color */
+    border-radius: 0.25rem; /* Slight border-radius */
+  }
+  
+  .index1-specific .styled-button .icon {
+    margin-right: 0.5rem; /* Space between icon and text */
+  }
+  
+  .index1-specific .styled-button:hover {
+    background-color: #e2e6ea; /* Slightly darker grey on hover */
+    text-decoration: none; /* No underline on hover */
+    color: red; /* Slightly darker text on hover */
+  }
+  .index1-specific .styled-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow the items to wrap onto the next line */
+    padding: 0.2rem 0.2rem; /* Adjust padding as needed */
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .index1-specific .styled-item .icon {
+    color: red;
+    margin-right: 0.5rem; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+  }
+  
+  .index1-specific .styled-item .lecture-text {
+    color: red;
+    font-weight: bold; /* Optional: if you want "Lecture" to be bold */
+  }
+  
+  .index1-specific .styled-item .lecture-detail {
+    color: grey;
+    display: block; /* Put the details on a new line */
+    width: 100%;
+    font-size: 0.85rem; /* Smaller font size for details */
+    margin-top: 0.25rem; /* Space between the lines */
+  }
+  
+  
+
+  

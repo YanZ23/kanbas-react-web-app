@@ -1,0 +1,18 @@
+
+.text-red {
+    color: red !important; /* This class will make the text red */
+  }
+  /* Ensure that the active list item has a different background to stand out */
+  .list-group-item.wd-active {
+    background-color: #f8f9fa !important; /* Light grey background for the active item */
+    color: black !important; /* Black text for the active item */
+  }
+  .list-group-item.wd-active:hover {
+    background-color: #e9ecef !important; /* Slightly darker grey for hover state */
+  }
+  /* Hover effect for list items */
+  .list-group-item:hover {
+    background-color: #f8f9fa !important; /* Light grey background on hover */
+    color: black !important; /* Black text on hover */
+  }
+

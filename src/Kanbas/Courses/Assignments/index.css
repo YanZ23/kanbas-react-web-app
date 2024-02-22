@@ -1,0 +1,7 @@
+.bordered-text {
+    border: 1px solid grey; 
+    padding: 2px 5px; /* Adds some padding inside the border */
+    margin-right: 5px; /* Optional: adds some space between the text and the icons */
+    border-radius: 10px;
+  }
+  
