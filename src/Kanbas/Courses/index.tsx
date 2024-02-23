@@ -6,6 +6,7 @@ import {
   redirect,
   useParams,
   useLocation,
+  Link,
 } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
@@ -140,12 +141,12 @@ function Courses() {
         id="kanbasNavigation"
       >
         <div className="list-group text-red">
-          <a
-            href="/Kanbas/Dashboard/screen.html"
+          <Link
+            to={`/Kanbas/Dashboard`}
             className="list-group-item list-group-item-action"
           >
             <FaTachometerAlt /> Dashboard
-          </a>
+          </Link>
           <a
             href="#"
             className="list-group-item list-group-item-action bg-dark text-white"
@@ -203,27 +204,39 @@ function Courses() {
         id="courseNavigation"
       >
         <div className="list-group">
-          <a href="#" className="list-group-item list-group-item-action">
+          <Link
+            to={`/Kanbas/Courses/${course?._id}/Home`}
+            className="list-group-item list-group-item-action"
+          >
             <FaHome /> Home
-          </a>
-          <a href="#" className="list-group-item list-group-item-action">
+          </Link>
+          <Link
+            to={`/Kanbas/Courses/${course?._id}/Modules`}
+            className="list-group-item list-group-item-action"
+          >
             <FaRocket /> Modules
-          </a>
+          </Link>
           <a href="#" className="list-group-item list-group-item-action">
             <FaCommentDots /> Piazza
           </a>
           <a href="#" className="list-group-item list-group-item-action">
             <FaVideo /> Zoom Meetings
           </a>
-          <a href="#" className="list-group-item list-group-item-action">
+          <Link
+            to={`/Kanbas/Courses/${course?._id}/Assignments`}
+            className="list-group-item list-group-item-action"
+          >
             <FaFile /> Assignments
-          </a>
+          </Link>
           <a href="#" className="list-group-item list-group-item-action">
             <FaBookmark /> Quizzes
           </a>
-          <a href="#" className="list-group-item list-group-item-action">
+          <Link
+            to={`/Kanbas/Courses/${course?._id}/Grades`}
+            className="list-group-item list-group-item-action"
+          >
             <FaBook /> Grades
-          </a>
+          </Link>
           <a href="#" className="list-group-item list-group-item-action">
             <FaUsers /> People
           </a>
@@ -272,12 +285,14 @@ function Courses() {
       <hr className="d-none d-md-block my-2 mx-3" />
 
       <div className="d-flex">
+        <div className="d-none d-md-block">
+          <CourseNavigation />
+        </div>
 
-      <div className="d-none d-md-block">
-        <CourseNavigation />
-      </div>
-
-      <div  className="flex-grow-1 overflow-y-scroll" style={{ padding: '0 15px' }}>
+        <div
+          className="flex-grow-1 overflow-y-scroll"
+          style={{ padding: "0 15px" }}
+        >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />

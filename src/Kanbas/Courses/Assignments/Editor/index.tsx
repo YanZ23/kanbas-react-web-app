@@ -18,9 +18,9 @@ function AssignmentEditor() {
   return (
     <div>
       <div className="mb-3 text-end">
-        <button className="btn btn-success">
-          <FaRegCheckCircle /> Published
-        </button>
+      <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-success">
+        <FaRegCheckCircle /> Published
+      </Link>
       </div>
       <hr className="d-none d-md-block my-3 mx-1" />
       <h4>Assignment Name</h4>
