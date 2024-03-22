@@ -6,15 +6,22 @@ import {
     FaPlus,
     FaStickyNote
 } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./index.css";
 import { assignments } from "../../Database";
+import { useSelector, useDispatch } from "react-redux";
+import { KanbasState } from "../../store";
 
 function Assignments() {
   const { courseId } = useParams();
+  const navigate = useNavigate();
   const assignmentList = assignments.filter(
     (assignment) => assignment.course === courseId
   );
+  const handleAddAssignmentClick = () => {
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
+  };
+
   return (
     <>
       <div className="row mb-3 align-items-center">
@@ -29,7 +36,7 @@ function Assignments() {
           <button type="button" className="btn btn-sm btn-primary me-2">
             <FaPlus /> Group
           </button>
-          <button type="button" className="btn btn-sm btn-secondary">
+          <button type="button" className="btn btn-sm btn-secondary" onClick={handleAddAssignmentClick}>
             <FaPlus /> Assignment
           </button>
           <div className="btn-group">
