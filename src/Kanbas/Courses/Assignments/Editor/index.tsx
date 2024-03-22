@@ -4,15 +4,13 @@ import { assignments } from "../../../Database";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
-import { addAssignment, updateAssignment } from "../assignmentsReducer";
+import { addAssignment, setAssignment, updateAssignment } from "../assignmentsReducer";
 
 function AssignmentEditor() {
   const { courseId, assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
+  // const assignment = assignments.find(
+  // (assignment) => assignment._id === assignmentId);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   // Initialize localAssignment with a type that includes title and description
   const [localAssignment, setLocalAssignment] = useState<{
@@ -54,10 +52,6 @@ function AssignmentEditor() {
     }
   }, [assignmentId, assignments]);
 
-  const handleInputChange = (e: any) => {
-    const { name, value } = e.target;
-    setLocalAssignment((prevState) => ({ ...prevState, [name]: value }));
-  };
 
   const handleSave = () => {
     if (assignmentId === 'new') {
@@ -73,13 +67,13 @@ function AssignmentEditor() {
     handleSave();
   };
 
-  // const dispatch = useDispatch();
-  // const assignment = useSelector(
-  //   (state: KanbasState) => state.assignmentsReducer.assignment
-  // );
-  // const assignmentList = useSelector(
-  //   (state: KanbasState) => state.assignmentsReducer.assignments
-  // );
+  const dispatch = useDispatch();
+  const assignment = useSelector(
+  (state: KanbasState) => state.assignmentsReducer.assignment
+  );
+  const assignmentList = useSelector(
+  (state: KanbasState) => state.assignmentsReducer.assignments
+  );
 
   return (
     <div>
@@ -90,9 +84,12 @@ function AssignmentEditor() {
       </div>
       <hr className="d-none d-md-block my-3 mx-1" />
       <h5>Assignment Name</h5>
-      <input value={assignment?.title} className="form-control mb-2" />
+      <input 
+      value={assignment.title} onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value }))}
+      className="form-control mb-2"
+      />
       <textarea
-        value={"assignment description"}
+        value={assignment.description} onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value }))} 
         className="form-control mb-2"
       />
 
@@ -102,8 +99,7 @@ function AssignmentEditor() {
         <div style={{ marginBottom: "20px" }}>
           <label>Points</label>
           <input
-            type="text"
-            value="100"
+            value={assignment.points} onChange={(e) => dispatch(setAssignment({ ...assignment, points: e.target.value }))}
             className="form-control mb-2"
             style={{display: "block", margin: "10px 0" }}
           />
@@ -113,7 +109,11 @@ function AssignmentEditor() {
 
         <div>
           <label>Due</label>
-          <input type="date" value="2023-12-15" className="form-control mb-2" />
+          <input 
+          value={assignment.dueDate}
+          type="date" 
+          onChange={(e) => dispatch(setAssignment({ ...assignment, dueDate: e.target.value }))} 
+          className="form-control mb-2" />
         </div>
 
         <div
@@ -126,16 +126,18 @@ function AssignmentEditor() {
           <div style={{ flex: "1", marginRight: "10px" }}>
             <label>Available From</label>
             <input
+              value={assignment.availableDate}
+              onChange={(e) => dispatch(setAssignment({ ...assignment, availableDate: e.target.value }))}
               type="date"
-              value="2023-12-15"
               className="form-control mb-2"
             />
           </div>
           <div style={{ flex: "1" }}>
             <label>Until</label>
             <input
+            value={assignment.untilDate}
+            onChange={(e) => dispatch(setAssignment({ ...assignment, untilDate: e.target.value }))}
               type="date"
-              value="2023-09-10"
               className="form-control mb-2"
             />
           </div>

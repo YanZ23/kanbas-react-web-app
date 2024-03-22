@@ -4,23 +4,29 @@ import {
     FaEllipsisV,
     FaPlusCircle,
     FaPlus,
-    FaStickyNote
+    FaStickyNote,
+    FaMinusCircle
 } from "react-icons/fa";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./index.css";
 import { assignments } from "../../Database";
 import { useSelector, useDispatch } from "react-redux";
 import { KanbasState } from "../../store";
+import { deleteAssignment } from "./assignmentsReducer";
 
 function Assignments() {
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId
-  );
   const handleAddAssignmentClick = () => {
     navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
   };
+  const dispatch = useDispatch();
+  const assignment = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignment
+  );
+  const assignmentList = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignments
+  );
 
   return (
     <>
@@ -36,7 +42,11 @@ function Assignments() {
           <button type="button" className="btn btn-sm btn-primary me-2">
             <FaPlus /> Group
           </button>
-          <button type="button" className="btn btn-sm btn-secondary" onClick={handleAddAssignmentClick}>
+          <button
+            type="button"
+            className="btn btn-sm btn-secondary"
+            onClick={handleAddAssignmentClick}
+          >
             <FaPlus /> Assignment
           </button>
           <div className="btn-group">
@@ -85,28 +95,39 @@ function Assignments() {
           <div>
             <FaEllipsisV className="me-2" /> ASSIGNMENTS
             <span className="float-end">
-            <span className="bordered-text">40% of Total</span>
+              <span className="bordered-text">40% of Total</span>
               <FaPlusCircle className="ms-2" />
               <FaEllipsisV className="ms-2" />
             </span>
           </div>
           <ul className="list-group">
-            {assignmentList.map((assignment) => (
-              <li className="list-group-item">
-                <FaEllipsisV className="me-2" />
-                <FaStickyNote className="me-2" style={{ color: 'green' }}/>
-                <Link
-                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                >
-                  {assignment.title}
-                </Link>
+            {assignmentList
+              .filter((assignment) => assignment.course === courseId)
+              .map((assignment, index) => (
+                <li className="list-group-item">
+                  <FaEllipsisV className="me-2" />
+                  <FaStickyNote
+                    className="me-2"
+                    style={{ color: "green" }}
+                  />
+                  <Link
+                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                  >
+                    {assignment.title}
+                  </Link>
 
-                <span className="float-end">
-                  <FaCheckCircle className="text-success" />
-                  <FaEllipsisV className="ms-2" />
-                </span>
-              </li>
-            ))}
+                  <span className="float-end">
+                  <FaMinusCircle
+                    className="ms-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(deleteAssignment(assignment._id));
+                    }}
+                  />
+                    <FaEllipsisV className="ms-2" />
+                  </span>
+                </li>
+              ))}
           </ul>
         </li>
       </ul>

@@ -3,7 +3,8 @@ import { assignments } from "../../Database";
 
 const initialState = {
     assignments: assignments,
-    assignment: { name: "New Assignment", description: "New Assignment Description", point: "100", published: false },
+    assignment: { title: "New Assignment", description: "New Assignment Description", points: "100", 
+    dueDate: "2021-12-31", availableDate: "2021-12-01", untilDate: "2021-12-31"},
     selectedAssignment: null,
 };
 
@@ -30,11 +31,14 @@ const assignmentsSlice = createSlice({
                 }
               });
         },
+        setAssignment: (state, action) => {
+            state.assignment = action.payload;
+          },
         selectAssignment: (state, action) => {
             state.selectedAssignment = action.payload;
         },
     },
 });
 
-export const { addAssignment, deleteAssignment, updateAssignment, selectAssignment } = assignmentsSlice.actions;
+export const { addAssignment, deleteAssignment, updateAssignment, setAssignment, selectAssignment } = assignmentsSlice.actions;
 export default assignmentsSlice.reducer;
